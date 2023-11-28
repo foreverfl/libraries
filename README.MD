@@ -10,6 +10,7 @@
   > - GraphQL
   > - Kafka
   > - Redis
+  > - Graddle
 
 - Python
 
@@ -154,3 +155,48 @@
 임시 데이터: 일시적으로만 필요한 데이터(예: OTP, 인증 토큰)를 저장하는 데 Redis를 사용할 수 있습니다.
 
 리더보드 및 카운팅: 게임 리더보드, 실시간 통계 등 빠르게 변경되는 순위나 카운팅 정보를 관리하는 데 Redis가 적합합니다.
+
+## Java - Gradle
+
+### 명령어
+
+- **gradle init**: Gradle 프로젝트를 초기화.
+- **gradlew build**: Gradle Wrapper를 사용하여 프로젝트를 빌드.
+- **gradlew tasks**: 프로젝트에서 사용할 수 있는 모든 작업을 나열.
+- **gradlew jar**: 실행 가능한 JAR 파일을 생성.
+- **gradlew :app:dependencies**: 'app' 서브프로젝트의 종속성 트리를 확인.
+
+### 플러그인의 역할
+
+- 프로젝트에 작업을 추가. (예: 컴파일, 테스트).
+- 기본 Gradle 모델을 확장. (예: 구성 가능한 새로운 DSL 요소 추가).
+- 관례에 따라 프로젝트를 구성. (예: 새 작업 추가 또는 합리적인 기본값 설정).
+- 특정 구성을 적용. (예: 조직적 저장소 추가 또는 표준 강제 적용).
+- 기존 타입에 새로운 속성과 메소드를 확장을 통해 추가.
+
+### 핵심 플러그인
+
+- https://docs.gradle.org/current/userguide/plugin_reference.html#plugin_reference
+
+### Gradle 상세 로그 보기
+
+1. gradle.properties 생성.
+2. gradle.properties에 다음과 같이 입력.
+
+```sh
+org.gradle.console=verbose
+```
+
+### 태스크 상태 설명
+
+- **UP-TO-DATE**: 이미 실행되었고 변경되지 않은 작업 (증분 빌드 기능).
+- **SKIPPED**: 명시적으로 실행이 방지된 작업.
+- **FROM-CACHE**: 빌드 캐시에서 이전 빌드의 결과를 복사한 작업 (캐싱 기능).
+- **NO-SOURCE**: 필요한 입력이 없어 실행되지 않은 작업.
+
+### Gradle 환경설정 우선순위
+
+1. **커맨드라인 플래그**: 속성 및 환경 변수보다 우선.
+2. **시스템 속성**: 루트 프로젝트 디렉토리에 있는 gradle.properties 파일에 저장됨.
+3. **Gradle 속성**: 일반적으로 프로젝트 디렉토리 또는 GRADLE_USER_HOME에 있는 gradle.properties 파일에 저장됨.
+4. **환경 변수**: Gradle을 실행하는 환경에서 제공.
