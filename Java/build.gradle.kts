@@ -16,16 +16,16 @@ repositories {
 
 dependencies {
     testImplementation("junit:junit:4.13.2")
-    // Servlet
-    // https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api
-    compileOnly("jakarta.servlet:jakarta.servlet-api:6.0.0")
 
-    // GraphQL
-    // https://mvnrepository.com/artifact/com.graphql-java/graphql-java
-    implementation("com.graphql-java:graphql-java:230521-nf-execution")
-
-    // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+    // Gson
+    implementation("com.google.code.gson:gson:2.10.1")
+    
+    // Kafka
     implementation("org.apache.kafka:kafka-clients:3.6.0")
+
+    // Redis
+    implementation("redis.clients:jedis:5.1.0")
+   
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
     implementation("org.slf4j:slf4j-simple:2.0.9")
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flex-grow Example</title>
+<style>
+  .flex-container {
+    display: flex;
+    background-color: lightgray;
+  }
+
+  .flex-item {
+    padding: 20px;
+    margin: 5px;
+    background-color: cornflowerblue;
+    color: white;
+    text-align: center;
+  }
+
+  /* 각 아이템에 다른 flex-grow 값을 설정 */
+  .flex-container .flex-item:nth-child(1) { flex-grow: 3; }
+  .flex-container .flex-item:nth-child(2) { flex-grow: 2; }
+  .flex-container .flex-item:nth-child(3) { flex-grow: 1; }
+</style>
+</head>
+<body>
+<div class="flex-container">
+  <div class="flex-item">3배 공간</div>
+  <div class="flex-item">2배 공간</div>
+  <div class="flex-item">1배 공간</div>
+</div>
+</body>
+</html>

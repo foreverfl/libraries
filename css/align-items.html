@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Align-items Example</title>
+<style>
+  .flex-container {
+    display: flex;
+    height: 150px;
+    background-color: lightgray;
+    margin-bottom: 10px;
+  }
+
+  .flex-item {
+    flex: 1;
+    margin: 5px;
+    background-color: darkseagreen;
+    min-height: 20px;
+  }
+
+  .stretch { align-items: stretch; }
+  .center { align-items: center; }
+  .start { align-items: flex-start; }
+  .end { align-items: flex-end; }
+</style>
+</head>
+<body>
+<div class="flex-container stretch">
+  <div class="flex-item">Stretch</div>
+  <div class="flex-item"></div>
+  <div class="flex-item"></div>
+</div>
+
+<div class="flex-container center">
+  <div class="flex-item">Center</div>
+  <div class="flex-item"></div>
+  <div class="flex-item"></div>
+</div>
+
+<div class="flex-container start">
+  <div class="flex-item">Start</div>
+  <div class="flex-item"></div>
+  <div class="flex-item"></div>
+</div>
+
+<div class="flex-container end">
+  <div class="flex-item">End</div>
+  <div class="flex-item"></div>
+  <div class="flex-item"></div>
+</div>
+</body>
+</html>

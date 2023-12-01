@@ -1,245 +1,364 @@
 {
-    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
-    // 기존 특성에 대한 설명을 보려면 가리킵니다.
-    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "_01_Getting_started",
-            "request": "launch",
-            "mainClass": "GraphQL._01_Getting_started",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "_02_Schema_01_Creating_a_schema",
-            "request": "launch",
-            "mainClass": "GraphQL._02_Schema_01_Creating_a_schema",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Arrays_binarySearch",
-            "request": "launch",
-            "mainClass": "default_library.Arrays_binarySearch",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Arrays_deepEquals",
-            "request": "launch",
-            "mainClass": "default_library.Arrays_deepEquals",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Arrays_equals",
-            "request": "launch",
-            "mainClass": "default_library.Arrays_equals",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "ByteArrayInputStreamExample",
-            "request": "launch",
-            "mainClass": "default_library.ByteArrayInputStreamExample",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Character_getNumericValue",
-            "request": "launch",
-            "mainClass": "default_library.Character_getNumericValue",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Collections_swap",
-            "request": "launch",
-            "mainClass": "default_library.Collections_swap",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Comparable_compareTo",
-            "request": "launch",
-            "mainClass": "default_library.Comparable_compareTo",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Comparator_comparingInt",
-            "request": "launch",
-            "mainClass": "default_library.Comparator_comparingInt",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "DateTimeFormatter_ofPattern",
-            "request": "launch",
-            "mainClass": "default_library.DateTimeFormatter_ofPattern",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "HashMap_getOrDefault",
-            "request": "launch",
-            "mainClass": "default_library.HashMap_getOrDefault",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "HashSetExample",
-            "request": "launch",
-            "mainClass": "default_library.HashSetExample",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "LocalDate_of",
-            "request": "launch",
-            "mainClass": "default_library.LocalDate_of",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "LocalTime_parse$LocalTimeParseExample",
-            "request": "launch",
-            "mainClass": "default_library.LocalTime_parse$LocalTimeParseExample",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "LocalTime_plusMinutes",
-            "request": "launch",
-            "mainClass": "default_library.LocalTime_plusMinutes",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Object_equals",
-            "request": "launch",
-            "mainClass": "default_library.Object_equals",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Object_getClass",
-            "request": "launch",
-            "mainClass": "default_library.Object_getClass",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Object_hashCode",
-            "request": "launch",
-            "mainClass": "default_library.Object_hashCode",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Objects_hash",
-            "request": "launch",
-            "mainClass": "default_library.Objects_hash",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "OptionalInt_getAsInt",
-            "request": "launch",
-            "mainClass": "default_library.OptionalInt_getAsInt",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "PrintWriterExample",
-            "request": "launch",
-            "mainClass": "default_library.PrintWriterExample",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "PropertiesExample",
-            "request": "launch",
-            "mainClass": "default_library.PropertiesExample",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Stream_collect",
-            "request": "launch",
-            "mainClass": "default_library.Stream_collect",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Stream_mapToInt",
-            "request": "launch",
-            "mainClass": "default_library.Stream_mapToInt",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "Stream_mapToObj",
-            "request": "launch",
-            "mainClass": "default_library.Stream_mapToObj",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "StringWriterExample",
-            "request": "launch",
-            "mainClass": "default_library.StringWriterExample",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "String_format",
-            "request": "launch",
-            "mainClass": "default_library.String_format",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "String_join",
-            "request": "launch",
-            "mainClass": "default_library.String_join",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "String_repeat",
-            "request": "launch",
-            "mainClass": "default_library.String_repeat",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "java_util_concurrent_CompletableFuture_supplyAsync",
-            "request": "launch",
-            "mainClass": "default_library.java_util_concurrent_CompletableFuture_supplyAsync",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "ConsumerExample",
-            "request": "launch",
-            "mainClass": "kafka.ConsumerExample",
-            "projectName": "Java"
-        },
-        {
-            "type": "java",
-            "name": "ProducerExample",
-            "request": "launch",
-            "mainClass": "kafka.ProducerExample",
-            "projectName": "Java"
-        }
-    ]
+  // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+  // 기존 특성에 대한 설명을 보려면 가리킵니다.
+  // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "_02_Data_type_11_HyperLogLog",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_11_HyperLogLog",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_10_Bitfields",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_10_Bitfields",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_09_Bitmaps",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_09_Bitmaps",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "java_util_stream_Collectors_toList",
+      "request": "launch",
+      "mainClass": "default_library.java_util_stream_Collectors_toList",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_08_Geospatial",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_08_Geospatial",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_07_Streams",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_07_Streams",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_05_Hashes",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_05_Hashes",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_06_Sorted_sets",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_06_Sorted_sets",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_04_Sets",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_04_Sets",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "check_all_keys",
+      "request": "launch",
+      "mainClass": "redis.check_all_keys",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_02_JSON",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_02_JSON",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_03_Lists",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_03_Lists",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Data_type_01_Strings",
+      "request": "launch",
+      "mainClass": "redis._02_Data_type_01_Strings",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "tmp",
+      "request": "launch",
+      "mainClass": "redis.tmp",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_01_Quick_starts",
+      "request": "launch",
+      "mainClass": "redis._01_Quick_starts",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_01_Data_structure_store",
+      "request": "launch",
+      "mainClass": "redis._01_Data_structure_store",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "GettingStarted",
+      "request": "launch",
+      "mainClass": "redis.GettingStarted",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "_01_Getting_started",
+      "request": "launch",
+      "mainClass": "GraphQL._01_Getting_started",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "_02_Schema_01_Creating_a_schema",
+      "request": "launch",
+      "mainClass": "GraphQL._02_Schema_01_Creating_a_schema",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Arrays_binarySearch",
+      "request": "launch",
+      "mainClass": "default_library.Arrays_binarySearch",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Arrays_deepEquals",
+      "request": "launch",
+      "mainClass": "default_library.Arrays_deepEquals",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Arrays_equals",
+      "request": "launch",
+      "mainClass": "default_library.Arrays_equals",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "ByteArrayInputStreamExample",
+      "request": "launch",
+      "mainClass": "default_library.ByteArrayInputStreamExample",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Character_getNumericValue",
+      "request": "launch",
+      "mainClass": "default_library.Character_getNumericValue",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Collections_swap",
+      "request": "launch",
+      "mainClass": "default_library.Collections_swap",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Comparable_compareTo",
+      "request": "launch",
+      "mainClass": "default_library.Comparable_compareTo",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Comparator_comparingInt",
+      "request": "launch",
+      "mainClass": "default_library.Comparator_comparingInt",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "DateTimeFormatter_ofPattern",
+      "request": "launch",
+      "mainClass": "default_library.DateTimeFormatter_ofPattern",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "HashMap_getOrDefault",
+      "request": "launch",
+      "mainClass": "default_library.HashMap_getOrDefault",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "HashSetExample",
+      "request": "launch",
+      "mainClass": "default_library.HashSetExample",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "LocalDate_of",
+      "request": "launch",
+      "mainClass": "default_library.LocalDate_of",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "LocalTime_parse$LocalTimeParseExample",
+      "request": "launch",
+      "mainClass": "default_library.LocalTime_parse$LocalTimeParseExample",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "LocalTime_plusMinutes",
+      "request": "launch",
+      "mainClass": "default_library.LocalTime_plusMinutes",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Object_equals",
+      "request": "launch",
+      "mainClass": "default_library.Object_equals",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Object_getClass",
+      "request": "launch",
+      "mainClass": "default_library.Object_getClass",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Object_hashCode",
+      "request": "launch",
+      "mainClass": "default_library.Object_hashCode",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Objects_hash",
+      "request": "launch",
+      "mainClass": "default_library.Objects_hash",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "OptionalInt_getAsInt",
+      "request": "launch",
+      "mainClass": "default_library.OptionalInt_getAsInt",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "PrintWriterExample",
+      "request": "launch",
+      "mainClass": "default_library.PrintWriterExample",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "PropertiesExample",
+      "request": "launch",
+      "mainClass": "default_library.PropertiesExample",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Stream_collect",
+      "request": "launch",
+      "mainClass": "default_library.Stream_collect",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Stream_mapToInt",
+      "request": "launch",
+      "mainClass": "default_library.Stream_mapToInt",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "Stream_mapToObj",
+      "request": "launch",
+      "mainClass": "default_library.Stream_mapToObj",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "StringWriterExample",
+      "request": "launch",
+      "mainClass": "default_library.StringWriterExample",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "String_format",
+      "request": "launch",
+      "mainClass": "default_library.String_format",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "String_join",
+      "request": "launch",
+      "mainClass": "default_library.String_join",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "String_repeat",
+      "request": "launch",
+      "mainClass": "default_library.String_repeat",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "java_util_concurrent_CompletableFuture_supplyAsync",
+      "request": "launch",
+      "mainClass": "default_library.java_util_concurrent_CompletableFuture_supplyAsync",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "ConsumerExample",
+      "request": "launch",
+      "mainClass": "kafka.ConsumerExample",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "ProducerExample",
+      "request": "launch",
+      "mainClass": "kafka.ProducerExample",
+      "projectName": "Java"
+    }
+  ]
 }

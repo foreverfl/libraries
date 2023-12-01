@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Get Attribute Example</title>
+</head>
+<body>
+<ul>
+  <li data-id="1" class="item">Item 1</li>
+  <li data-id="2" class="item">Item 2</li>
+  <li data-id="3" class="item">Item 3</li>
+</ul>
+
+<script>
+  document.querySelectorAll('.item').forEach(function(item) {
+    item.addEventListener('click', function(event) {
+      var itemId = event.target.getAttribute('data-id'); // 데이터 속성값 가져오기
+      alert("Item ID: " + itemId);
+    });
+  });
+</script>
+</body>
+</html>
