@@ -7,7 +7,8 @@
  */
 plugins {
     java
-    war // 웹 애플리케이션 패키징
+    war 
+    id("org.gretty") version "4.1.1"
 }
 
 repositories {
