@@ -1,5 +1,8 @@
 type Query {
   bookById(id: ID): Book
+  schemaScalars(id: ID!): SchemaScalars
+  data_fetching_products(match: String): [Data_fetching_Product]
+  data_mapping_products(match: String): [Data_mapping_Product]
 }
 
 type Book {

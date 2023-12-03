@@ -1,0 +1,23 @@
+type Data_mapping_Product {
+  id: ID
+  name: String
+  description: String
+  cost: Float
+  tax: Float
+}
+
+type Data_mapping_ProductInfo {
+  id: ID
+  name: String
+  description: String
+}
+
+type Data_mapping_ProductCostInfo {
+  id: ID
+  cost: Float
+}
+
+type Data_mapping_ProductTaxInfo {
+  id: ID
+  tax: Float
+}

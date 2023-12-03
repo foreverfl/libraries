@@ -1,0 +1,8 @@
+type Data_fetching_Product {
+  id: ID
+  name: String
+  description: String
+  cost: Float
+  tax: Float
+  launchDate(dateFormat: String = "dd, MMM, yyyy"): String
+}

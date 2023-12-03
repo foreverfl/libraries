@@ -1,4 +1,4 @@
-package graphql;
+package graphql._00_Tutorial;
 
 import java.util.Arrays;
 import java.util.List;

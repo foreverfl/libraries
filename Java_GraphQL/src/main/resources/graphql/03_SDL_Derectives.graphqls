@@ -1,0 +1,15 @@
+directive @auth(role: String!) on FIELD_DEFINITION
+
+type SDL_Directives_Employee {
+  id: ID
+  name: String!
+  startDate: String!
+  salary: Float @auth(role: "manager")
+}
+
+type SDL_Directives_Department {
+  id: ID
+  name: String
+  yearlyOperatingBudget: Float @auth(role: "manager")
+  monthlyMarketingBudget: Float @auth(role: "manager")
+}
