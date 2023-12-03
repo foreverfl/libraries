@@ -1,6 +1,6 @@
 ## 개요
 
-- 사용해 본 Library와 Framework에 대해 정리하는 Repository입니다. 자료는 GPT4 및 웹서핑을 사용해서 만들었습니다.
+- 사용해 본 Library에 대해 정리하는 Repository입니다. 자료는 GPT4 및 구글링을 사용해서 만들었습니다.
 
 ## 목차
 
@@ -23,8 +23,19 @@
 - php
 - Node.js
 - JavaScript
+- HTML/CSS
 
-## Java - Default Library
+## Java - Standard Library
+
+### 표준 라이브러리의 내장 패키지
+
+- **java.lang**: 자바 프로그래밍의 기본 클래스들을 포함함. 예를 들어, String, Math, System, Thread 등이 여기에 속함. 이 패키지는 자바 프로그램의 기본적인 구성 요소를 제공함.
+- **java.util**: 유틸리티 클래스와 인터페이스를 포함함. 컬렉션 프레임워크(List, Set, Map 등), 날짜 및 시간 유틸리티(Date, Calendar), 기타 유틸리티 클래스(Random, Scanner, Comparator 등)가 이에 해당함.
+- **java.io**: 입력과 출력(I/O) 관련 기능을 제공함. 파일 읽기/쓰기, 스트림 처리 등이 포함됨.
+- **java.nio**: 뉴 I/O(New I/O) 관련 클래스와 인터페이스를 제공함. 버퍼, 채널, 셀렉터 등 고성능 I/O 작업을 위한 클래스가 포함됨.
+- **java.net**: 네트워킹 관련 기능을 제공함. 소켓 프로그래밍, URL 처리 등이 여기에 속함.
+- **java.time**: 자바 8부터 도입된 날짜와 시간 API. LocalDate, LocalTime, DateTimeFormatter 등을 포함함.
+- **java.sql**: 데이터베이스 접근과 관련된 클래스와 인터페이스를 제공함. JDBC API가 여기에 포함됨.
 
 ## Java - GraphQL
 

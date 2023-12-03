@@ -6,6 +6,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "java_Instance_as_Parameter",
+      "request": "launch",
+      "mainClass": "default_library.java_Instance_as_Parameter",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "java_lang_annotation",
+      "request": "launch",
+      "mainClass": "default_library.java_lang_annotation",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "java_lang_reflect",
+      "request": "launch",
+      "mainClass": "default_library.java_lang_reflect",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "java_lan_annotation",
+      "request": "launch",
+      "mainClass": "default_library.java_lan_annotation",
+      "projectName": "Java"
+    },
+    {
+      "type": "java",
+      "name": "GraphqlApplication",
+      "request": "launch",
+      "mainClass": "graphql.GraphqlApplication",
+      "projectName": "graphql"
+    },
+    {
+      "type": "java",
       "name": "_02_Data_type_11_HyperLogLog",
       "request": "launch",
       "mainClass": "redis._02_Data_type_11_HyperLogLog",
