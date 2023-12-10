@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Encode URI Component Example</title>
-</head>
-<body>
-<!-- 공백 등의 특수 문자를 포함하는 텍스트를 입력 -->
-<input type="text" id="userInput" placeholder="Enter text here">
-<button id="submitEncoded">Submit with Encoding</button> 
-<button id="submitWithoutEncoding">Submit without Encoding</button>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Encode URI Component Example</title>
+  </head>
+  <body>
+    <!-- 공백 등의 특수 문자를 포함하는 텍스트를 입력 -->
+    <input type="text" id="userInput" placeholder="Enter text here" />
+    <button id="submitEncoded">Submit with Encoding</button>
+    <button id="submitWithoutEncoding">Submit without Encoding</button>
 
-<script>
-  document.getElementById('submitEncoded').addEventListener('click', function() {
-    var userInput = document.getElementById('userInput').value;
-    var encodedInput = encodeURIComponent(userInput); // UTF-8로 인코딩
-    alert("Encoded URL: " + "search?query=" + encodedInput);
-  });
+    <script>
+      document
+        .getElementById("submitEncoded")
+        .addEventListener("click", function () {
+          var userInput = document.getElementById("userInput").value;
+          var encodedInput = encodeURIComponent(userInput); // UTF-8로 인코딩
+          alert("Encoded URL: " + "search?query=" + encodedInput);
+        });
 
-  document.getElementById('submitWithoutEncoding').addEventListener('click', function() {
-    var userInput = document.getElementById('userInput').value;
-    alert("Non-Encoded URL: " + "search?query=" + userInput);
-  });
-</script>
-</body>
+      document
+        .getElementById("submitWithoutEncoding")
+        .addEventListener("click", function () {
+          var userInput = document.getElementById("userInput").value;
+          alert("Non-Encoded URL: " + "search?query=" + userInput);
+        });
+    </script>
+  </body>
 </html>

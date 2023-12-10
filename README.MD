@@ -48,23 +48,36 @@
   > - **main(or master)**: 대부분의 저장소에서 기본 브랜치로 사용되는 이름. 이 브랜치에서 프로젝트의 주요 개발 작업이 이루어짐.
   > - **branch**: 프로젝트의 다른 버전을 동시에 개발할 수 있게 해주는 독립적인 작업 경로.
 
+- **remote**: 로컬 저장소의 원격 저장소를 설정함.
+
+> - git remote add [remote_name] [URL]: 원격 저장소를 추가함.
+> - git remote -v: 추가된 원격 저장소를 확인함.
+> - git remote show [remote_name]: 이 명령어는 특정 원격 저장소에 대한 상세 정보를 보여줌. 여기서 [remote_name]은 원격 저장소의 이름임.
+> - git remote show: 이 명령어는 현재 로컬 저장소에 등록된 모든 원격 저장소의 이름을 나열함.
+> - git remote remove [remote_name] 또는 git remote rm [remote_name]: 원격 저장소를 제거함.
+> - git remote rename [old_name] [new_name]: 원격 저장소의 이름을 변경함.
+
 - **branch**: 코드의 다른 버전을 독립적으로 관리할 수 있는 기능. 이를 통해 한 프로젝트에서 여러 기능을 동시에 개발하거나 실험적인 작업을 별도로 진행할 수 있음.
 
-  > - git branch [branch_name]: 새로운 브랜치를 생성.
   > - git branch: 로컬 저장소에 있는 모든 브랜치 목록이 출력됨.
   > - git branch --list: 로컬 저장소에 있는 모든 브랜치 목록이 출력됨.
+  > - git branch [branch_name]: 새로운 브랜치를 생성.
+  > - git branch -v: 각 브랜치의 마지막 커밋 메시지를 보여줌.
+  > - git branch --merged: 각 브랜치를 보여주고 병합된 브랜치 앞에는 *가 표시됨. *가 없는 브랜치는 삭제해도 무방함.
   > - git branch -r: 원격 저장소의 브랜치 목록이 출력됨.
   > - git branch -a: 로컬 브랜치와 원격 브랜치가 모두 출력됨.
   > - git branch -d [branch_name]: 브랜치를 삭제.
+  > - git branch -D [branch_name]: 병합되지 않은 브랜치를 삭제.
 
-- **add [stage area]**: 변경된 파일을 스테이징 영역에 추가해서, 커밋 대기 상태로 만드는 단계. git add 명령어를 사용하면, 해당 파일들은 스테이지 영역에 올라가 커밋을 기다림.
+- **add [stage area]**: 변경된 파일을 스테이징 영역에 추가해서, 커밋 대기 상태로 만드는 단계. git add 명령어를 사용하면, 해당 파일들은 스테이지 영역에 올라가 커밋을 기다림. add의 의미는 프로젝트에 파일을 추가한다기 보다는 다음 커밋에 추가한다고 받아들이는게 좋음.
 
   > - git add [file_name]: 특정 파일을 스테이징 영역에 추가.
   > - git add .: 변경된 모든 파일을 스테이징 영역에 추가.
 
 - **commit**: 변경 사항을 영구적으로 저장하는 버전을 만드는 과정. git commit을 실행하면 스테이지 영역의 파일들이 새로운 커밋으로 기록됨.
 
-  > - git commit -m "[commit_message]": 변경 사항에 대한 설명과 함께 커밋.
+  > - git commit -m "[commit_message]": 스테이징 영역에 있는 파일들의 변경 사항에 대한 설명과 함께 커밋.
+  > - git commit -a -m "message": 작업 디렉토리의 수정된 파일들을 자동으로 스테이징하고 커밋.
   > - git commit --amend: 마지막 커밋을 수정.
 
 - **push**: 로컬 저장소의 커밋을 원격 저장소에 업로드하는 과정. git push를 사용하면 로컬의 변경 사항을 원격 저장소와 동기화.
@@ -78,7 +91,15 @@
 
 - **merge**: 두 브랜치의 변경 사항을 합치는 과정. git merge를 사용하면 한 브랜치의 변경 사항을 다른 브랜치와 병합할 수 있음.
 
-  > - git merge [branch_name]: 지정된 브랜치의 변경 사항을 현재 브랜치와 병합.
+  > - git merge [branch_name]: 로컬 저장소 내의 두 브랜치를 병합
+  > - git merge origin/[branch_name] 명령은 원격 저장소의 특정 브랜치(예: origin/master)와 현재 체크아웃된 로컬 브랜치를 병합. 여기서 origin/[branch_name]은 원격 브랜치의 최신 상태를 나타내는 로컬 참조.
+  > - 3-way Merge
+  >   > - 이 전략은 세 개의 커밋 포인트를 사용함. 각 포인트는 두 브랜치의 최신 커밋과 이 두 브랜치의 공통 조상 커밋을 의미함.
+  >   > - Git은 이 세 커밋을 비교하여 자동으로 변경사항을 병합함.
+  >   > - 충돌이 발생하는 경우, 사용자는 수동으로 충돌을 해결하고 병합을 완료해야 함.
+  > - Fast-Forward Merge (Recursive Strategy)
+  >   > - Fast-forward 병합은 한 브랜치가 다른 브랜치의 직접적인 이력상의 자손인 경우에 사용됨.
+  >   > - 이 경우, HEAD만 최신 커밋으로 이동함. 새로운 커밋이 생성되지 않음.
 
 - **clone**: 원격 저장소의 내용을 로컬 컴퓨터에 복사하는 과정. git clone 명령어로 저장소의 전체 이력을 복사할 수 있음.
 
@@ -113,8 +134,8 @@
   > - git rebase [base_branch]: 현재 브랜치의 커밋을 지정된 기준 브랜치 위로 재배치.
   > - git rebase -i [base_branch]: 인터랙티브 모드에서 리베이스 실행. 이 명령어는 커밋 히스토리를 보다 세밀하게 조정할 수 있는 인터페이스를 제공함. 사용자는 커밋의 순서를 변경하거나, 커밋을 수정, 합치거나, 삭제하는 등 다양한 작업을 수행할 수 있음.
   > - git rebase --onto [branch_A] [branch_B] [branch_C]: B와 C의 공통 조상부터 C까지의 커밋을 A 브랜치로 이동시킴.
-  > - [참고 링크](https://wormwlrm.github.io/2020/09/03/Git-rebase-with-interactive-option.html)
-  > - [참고 링크](https://readystory.tistory.com/151)
+  > - [참고 링크 1](https://wormwlrm.github.io/2020/09/03/Git-rebase-with-interactive-option.html)
+  > - [참고 링크 2](https://readystory.tistory.com/151)
 
 - **remove**: 추적 중인 파일을 로컬 디렉토리와 Git 저장소에서 삭제함. "추적 중인 파일"이라는 용어는 Git에서 관리하고 있는 파일을 의미함. 이는 파일이 스테이지에 올라간 상태, 커밋된 상태 또는 이전에 커밋된 적이 있어서 Git이 변경 사항을 추적하고 있는 모든 파일을 포함함. 즉, Git 저장소에 의해 관리되는 모든 파일이 "추적 중인 파일"에 해당함.
 
@@ -137,6 +158,8 @@
   > - git log --oneline: 커밋을 한 줄 요약으로 보여줌.
   > - git log --graph --all --oneline: 이 명령어는 모든 브랜치의 커밋 이력을 그래픽 형태로 보여줌.
   > - git log --graph --decorate --oneline: 이 명령어는 커밋 히스토리를 그래프 형태로 표시하고, --decorate 옵션을 통해 각 커밋에 브랜치 이름이나 태그 등 추가적인 정보를 포함시킴.
+  > - git log -p -2: 최근 2개의 커밋과 각 커밍ㅅ에서 이루어진 변경사항(patch)를 보여줌.
+  > - git log --stat: 각 커밋의 통계 정보를 조회.
 
 - **diff**: 변경 사항을 비교. git diff 명령어를 사용해 파일 간의 차이점을 확인할 수 있음.
 
@@ -152,6 +175,7 @@
   > - git tag [tag_name]: 현재 커밋에 새 태그를 생성.
   > - git tag -a [tag_name] -m "[message]": 주석과 함께 새 태그를 생성.
   > - git tag -d [tag_name]: 태그를 삭제함.
+  > - git log --since=2.weeks: 최근 2주간의 로그를 조회함.
 
 - **config**: git config 명령어는 Git의 설정을 관리하는 데 사용됨. 사용자 이름, 이메일, 코딩 스타일, 브랜치 동작 등 다양한 Git 관련 설정을 조정할 수 있음.
 

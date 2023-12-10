@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Components_Buttons</title>
+    <link href="../bootstrap/css/custom.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div
+      class="container d-flex flex-column align-items-center justify-content-center"
+      style="min-height: 100vh"
+    >
+      <button type="button" class="btn btn-primary my-3">
+        Notifications <span class="badge text-bg-secondary">4</span>
+      </button>
+
+      <button type="button" class="btn btn-primary position-relative my-3">
+        Inbox
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          99+
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </button>
+
+      <button type="button" class="btn btn-primary position-relative my-3">
+        Profile
+        <span
+          class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
+        >
+          <span class="visually-hidden">New alerts</span>
+        </span>
+      </button>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="../bootstrap/js/bootstrap.min.js"
+    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+    crossorigin="anonymous"
+  ></script>
+</html>

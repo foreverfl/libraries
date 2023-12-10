@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Translate Middle 예제</title>
+    <style>
+      .container {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background-color: lightblue;
+      }
+      .default-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 50px;
+        background-color: rgb(10, 75, 13);
+      }
+      .middle-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(
+          -50%,
+          -50%
+        ); /* 요소의 시작점을 중앙으로 함. 디폴트값은 왼쪽 상단 모서리. */
+        width: 100px;
+        height: 50px;
+        background-color: rgb(255, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="default-box">기본 위치</div>
+      <div class="middle-box">중앙 위치</div>
+    </div>
+  </body>
+</html>

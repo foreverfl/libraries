@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Element_innerHTML</title>
+  </head>
+  <body>
+    <div id="content">여기에 새로운 내용이 표시됩니다.</div>
+    <button id="updateButton">내용 추가</button>
+
+    <script>
+      document
+        .getElementById("updateButton")
+        .addEventListener("click", function () {
+          const newContent = document.createElement("p");
+          newContent.innerHTML = "새로운 내용이 여기에 추가됩니다!";
+          document.getElementById("content").appendChild(newContent);
+        });
+    </script>
+  </body>
+</html>

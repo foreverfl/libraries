@@ -1,0 +1,34 @@
+// Bootstrap 기본 변수 및 함수 임포트
+@import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/variables";
+
+// 커스터마이징
+// Components_Accordian
+$accordion-button-bg: #ff6b6b;
+$accordion-button-color: #ffffff;
+
+// Components_Alerts
+$alert-padding-y: 3rem;
+
+// Components_Badge
+$badge-color: rgb(255, 255, 139);
+
+// Components_Buttons
+$bd-violet: #9b59b6;
+
+.btn-bd-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+  --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+  --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+
+// Bootstrap SCSS 전체 임포트
+@import "../bootstrap/scss/bootstrap";

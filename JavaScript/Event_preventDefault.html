@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PreventDefault Example</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <input type="text" name="name" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+  <script>
+    document
+      .getElementById("myForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // 폼 제출의 기본 동작을 방지
+        alert("Form Submitted!");
+      });
+  </script>
+</html>
