@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Concat Example</title>
+  </head>
+  <body>
+    <script>
+      // 두 배열을 정의
+      var array1 = ["a", "b", "c"];
+      var array2 = ["d", "e", "f"];
+
+      // concat 메서드를 사용하여 array2를 array1에 연결
+      var combinedArray = array1.concat(array2);
+
+      // 결과 출력
+      console.log(combinedArray); // ["a", "b", "c", "d", "e", "f"]
+      document.write(
+        "<pre>" + JSON.stringify(combinedArray, null, 2) + "</pre>"
+      );
+    </script>
+  </body>
+</html>
