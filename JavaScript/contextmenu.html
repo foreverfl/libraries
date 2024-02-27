@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Context Menu Example</title>
+  </head>
+  <body>
+    <div
+      id="contextMenuArea"
+      style="width: 200px; height: 200px; background-color: #f0f0f0"
+    >
+      Right-click on me!
+    </div>
+
+    <script>
+      document
+        .getElementById("contextMenuArea")
+        .addEventListener("contextmenu", function (event) {
+          event.preventDefault();
+          alert("Custom context menu action here!");
+        });
+    </script>
+  </body>
+</html>

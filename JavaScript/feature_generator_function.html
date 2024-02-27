@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function* generateNumbers(start, end) {
+        for (let i = start; i <= end; i++) {
+          yield i; // 현재 숫자를 반환하고, 함수 실행을 일시 중단
+        }
+      }
+
+      // 제너레이터 함수 사용
+      const numberGenerator = generateNumbers(1, 5);
+
+      console.log(numberGenerator.next().value); // 1
+      console.log(numberGenerator.next().value); // 2
+      console.log(numberGenerator.next().value); // 3
+      console.log(numberGenerator.next().value); // 4
+      console.log(numberGenerator.next().value); // 5
+      console.log(numberGenerator.next().done); // true, 더 이상 반환할 값이 없음
+
+      // 또는 for...of 루프를 사용하여 모든 값을 반복
+      for (let number of generateNumbers(1, 5)) {
+        console.log(number);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="result"></div>
+  </body>
+  <script>
+    // Promise를 반환하는 함수
+    function myAsyncFunction() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // 2초 후에 Promise가 성공적으로 완료됨
+          resolve("Success! Data received");
+        }, 2000);
+      });
+    }
+
+    console.log("Before calling myAsyncFunction");
+
+    // Promise를 사용하여 비동기 함수 호출
+    myAsyncFunction().then((successMessage) => {
+      // Promise가 성공적으로 완료되면 이 부분이 실행됩니다.
+      console.log(successMessage);
+    });
+
+    console.log("After calling myAsyncFunction");
+  </script>
+</html>

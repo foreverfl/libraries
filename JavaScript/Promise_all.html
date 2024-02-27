@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 세 개의 프로미스를 생성하는 예제
+      const promise1 = Promise.resolve(3);
+      const promise2 = 42;
+      const promise3 = new Promise((resolve, reject) => {
+        setTimeout(resolve, 100, "foo");
+      });
+
+      // Promise.all을 사용해 모든 프로미스를 병렬로 실행
+      Promise.all([promise1, promise2, promise3])
+        .then((values) => {
+          console.log(values); // [3, 42, "foo"]
+        })
+        .catch((error) => {
+          console.error(`Error: ${error}`);
+        });
+    </script>
+  </body>
+</html>

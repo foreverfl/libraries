@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce with Event Listener Example</title>
+  </head>
+  <body>
+    <button id="calculateBtn">Calculate Frequency</button>
+    <div id="result">
+      Click the button to calculate the frequency of each item in the array.
+    </div>
+
+    <script>
+      // 예제 배열
+      const items = [
+        "apple",
+        "banana",
+        "orange",
+        "banana",
+        "apple",
+        "orange",
+        "apple",
+      ];
+
+      // 버튼 클릭 이벤트 리스너 추가
+      document.getElementById("calculateBtn").addEventListener("click", () => {
+        // reduce()를 사용하여 각 요소의 빈도수 계산
+        const frequency = items.reduce((accumulator, currentValue) => {
+          accumulator[currentValue] = (accumulator[currentValue] || 0) + 1;
+          return accumulator;
+        }, {});
+
+        // 결과 표시를 위한 문자열 생성
+        const resultText = Object.entries(frequency)
+          .map(([item, count]) => {
+            return `${item}: ${count}`;
+          })
+          .join(", ");
+
+        // 결과를 화면에 표시
+        document.getElementById(
+          "result"
+        ).textContent = `Frequency: ${resultText}`;
+      });
+    </script>
+  </body>
+</html>

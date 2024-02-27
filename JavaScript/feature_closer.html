@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function makeCounter() {
+        let count = 0; // `makeCounter` 함수의 어휘적 환경에 속한 변수
+
+        return function () {
+          return count++; // 내부 함수는 외부 함수의 변수 `count`에 접근할 수 있음
+        };
+      }
+
+      let counter = makeCounter(); // `makeCounter` 호출 시, 클로저가 생성됨
+      console.log(counter()); // 0
+      console.log(counter()); // 1
+      console.log(counter()); // 2
+    </script>
+  </body>
+</html>

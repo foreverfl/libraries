@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sync Example</title>
+  </head>
+  <body></body>
+  <script>
+    function syncFunction() {
+      console.log("1. Start sync function");
+
+      // 동기적으로 시간이 걸리는 작업을 가정
+      const startTime = new Date().getTime();
+      while (new Date().getTime() < startTime + 2000); // 2초 대기
+
+      console.log("2. End of blocking operation");
+
+      console.log("3. End sync function");
+    }
+
+    console.log("Before calling sync function");
+    syncFunction();
+    console.log("After calling sync function");
+    console.log("========================================");
+
+    async function asyncFunction() {
+      console.log("1. Start async function");
+
+      // 비동기적으로 시간이 걸리는 작업을 가정
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // 2초 대기
+
+      console.log("2. End of non-blocking operation");
+
+      console.log("3. End async function");
+    }
+
+    console.log("Before calling async function");
+    asyncFunction();
+    console.log("After calling async function");
+  </script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function A() {
+      console.log("A");
+    }
+
+    function B() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log("B");
+          resolve();
+        }, 2000); // 2초 후에 실행
+      });
+    }
+
+    function C() {
+      console.log("C");
+    }
+
+    function D() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log("D");
+          resolve();
+        }, 2000); // 2초 후에 실행
+      });
+    }
+
+    function E() {
+      console.log("E");
+    }
+
+    // 비동기 함수에서 await를 사용
+    async function funcWithAwait() {
+      A();
+      await B();
+      C();
+      await D();
+      E();
+    }
+
+    // 비동기 함수에서 await를 사용하지 않음
+    async function funcWithoutAwait() {
+      A();
+      B();
+      C();
+      D();
+      E();
+    }
+
+    async function combine() {
+      console.log("funcWithAwait()");
+      await funcWithAwait();
+      console.log("=============");
+      console.log("funcWithoutAwait()");
+      console.log();
+      funcWithoutAwait();
+    }
+
+    combine();
+  </script>
+</html>

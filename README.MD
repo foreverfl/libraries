@@ -386,3 +386,154 @@ org.gradle.console=verbose
 2. **시스템 속성**: 루트 프로젝트 디렉토리에 있는 gradle.properties 파일에 저장됨.
 3. **Gradle 속성**: 일반적으로 프로젝트 디렉토리 또는 GRADLE_USER_HOME에 있는 gradle.properties 파일에 저장됨.
 4. **환경 변수**: Gradle을 실행하는 환경에서 제공.
+
+## JavaScript
+
+### JavaScript의 특징
+
+- **프로토타입 기반 상속**: 자바스크립트는 클래스 기반 언어가 아니라 프로토타입 기반 언어. 객체는 프로토타입 객체로부터 속성과 메서드를 상속받을 수 있으며, 이는 자바의 클래스 기반 상속과는 다른 개념. 프로토타입 체인을 이해하는 것은 자바스크립트에서 매우 중요함.
+
+- **일급 함수 (First-class Functions)**: 자바스크립트에서 함수는 일급 객체. 이는 함수를 변수에 할당할 수 있고, 다른 함수의 인자로 전달하거나, 다른 함수로부터 반환 받을 수 있다는 것을 의미함. 이러한 특성은 고차 함수를 가능하게 하여, 함수형 프로그래밍 패러다임을 지원함.
+
+- **동적 타이핑**: 자바스크립트는 동적 타입 언어. 이는 변수의 타입이 실행 시간에 결정되고 변경될 수 있다는 것을 의미함. 이는 자바와 같은 정적 타입 언어와 큰 차이점이며, 유연성을 제공하지만, 때로는 예상치 못한 타입 관련 오류를 발생시킬 수 있음.
+
+- **이벤트 루프와 비동기 프로그래밍**: 자바스크립트는 싱글 스레드 언어지만, 이벤트 루프를 통해 비동기 작업을 효율적으로 관리함.
+
+- **트루시와 폴시 값 (Truthy and Falsy Values)**: 자바스크립트에는 'truthy'와 'falsy'라는 개념이 있음. 이는 조건문 등에서 특정 값이 true 또는 false로 간주될 수 있다는 것을 의미함. 예를 들어, 빈 문자열(""), 숫자 0, null, undefined, NaN은 모두 falsy 값.
+
+- **스코프와 호이스팅**: 변수의 스코프(전역 스코프, 블록 스코프, 함수 스코프)와 호이스팅(변수 선언이 스코프의 최상위로 끌어올려지는 것처럼 동작하는 특성)도 중요한 개념. let과 const는 블록 스코프를 가지는 반면, var는 함수 스코프를 가짐. 다시 말해, 호이스팅(Hoisting)은 자바스크립트에서 변수 및 함수 선언을 코드의 상단으로 끌어올리는 것처럼 동작하는 특성을 말함. 이는 변수와 함수가 실제로 코드상에서 이동하는 것은 아니지만, 자바스크립트 엔진이 코드를 실행하기 전에 변수와 함수 선언을 메모리에 저장하는 방식 때문에 발생함.
+  > - **변수 호이스팅**
+
+```javascript
+console.log(x); // undefined
+var x = 5;
+console.log(x); // 5
+```
+
+> - **함수 호이스팅**
+
+```javascript
+hello(); // "Hello, World!"
+
+function hello() {
+  console.log("Hello, World!");
+}
+```
+
+### Prototype
+
+- **개념**: JavaScript에서 prototype은 객체 지향 프로그래밍의 상속을 구현하는 메커니즘. 모든 JavaScript 객체는 prototype 객체를 가지고 있으며, 이 객체는 객체가 생성될 때 다른 객체로부터 메서드와 속성을 상속받는 데 사용됨. 예를 들어, JavaScript의 모든 배열 객체는 Array.prototype으로부터 메서드를 상속받음. 이는 모든 배열이 .map(), .filter(), .reduce() 같은 표준 배열 메서드에 접근할 수 있음을 의미함.
+
+```javascript
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+// 'fullName' 메서드를 Person의 prototype에 추가
+Person.prototype.fullName = function () {
+  return this.firstName + " " + this.lastName;
+};
+
+const person1 = new Person("John", "Doe");
+console.log(person1.fullName()); // John Doe
+```
+
+### closer
+
+- **개념**: 클로저는 함수와 그 함수가 선언된 어휘적 환경의 조합. 이는 함수가 자신이 선언될 당시의 환경을 기억하여, 함수가 스코프 밖에서 실행되어도 그 환경에 접근할 수 있게 해줌. 클로저는 주로 데이터를 은닉하거나 캡슐화하는데 사용되며, JavaScript에서 강력한 프로그래밍 패턴을 가능하게 함.
+
+- **사용하는 이유**
+  > - **데이터 은닉과 캡슐화**: 클로저를 통해 특정 함수에 대한 접근을 제어하고, 변수를 외부에서 직접 접근할 수 없도록 은닉할 수 있습니다. 이는 객체지향 프로그래밍의 캡슐화 원칙과 유사합니다. 클로저는 내부 변수를 보호하면서도, 특정 함수를 통해서만 그 변수를 조작할 수 있게 해줌.
+
+```javascript
+function createCounter() {
+  let count = 0; // 외부에서 접근할 수 없는 private 변수
+  return {
+    increment: function () {
+      count++;
+    },
+    decrement: function () {
+      count--;
+    },
+    getCount: function () {
+      return count;
+    },
+  };
+}
+
+const counter = createCounter();
+counter.increment();
+counter.increment();
+console.log(counter.getCount()); // 2
+counter.decrement();
+console.log(counter.getCount()); // 1
+```
+
+> - **상태 유지**: 클로저는 함수가 생성될 때의 환경을 "기억"합니다. 이를 통해 해당 환경(스코프)에 있던 변수들의 상태를 유지할 수 있으며, 이러한 특성은 이벤트 핸들러, 콜백 함수 등에서 상태를 유지해야 할 때 매우 유용함.
+
+```javascript
+function setupCounter(label) {
+  let count = 0;
+  document.getElementById(label).addEventListener("click", function () {
+    count++;
+    console.log(`${label}: ${count}`);
+  });
+}
+
+setupCounter("button1");
+```
+
+> - **모듈 패턴**: 클로저는 JavaScript에서 모듈 패턴을 구현하는 데 사용될 수 있음. 이 패턴을 사용하면 공개 함수(public method)를 통해서만 내부 함수(private function)와 변수에 접근할 수 있습니다. 이는 코드를 재사용 가능하고, 관리하기 쉬운 구조로 만들어 줌.
+
+```javascript
+var myModule = (function () {
+  var privateVar = "I am private";
+  return {
+    publicMethod: function () {
+      console.log(privateVar);
+    },
+  };
+})();
+
+myModule.publicMethod(); // "I am private"
+```
+
+> - **커링(Currying)과 함수형 프로그래밍**: 클로저는 커링(currying)이나 부분 적용(partial application) 같은 함수형 프로그래밍 기법을 구현할 때 필수적입니다. 이러한 기법을 통해 함수의 재사용성을 높이고, 코드의 간결성을 개선할 수 있습니다.
+
+```javascript
+function multiply(a, b) {
+  return a * b;
+}
+
+function preMultiplyBy(multiplier) {
+  return function (number) {
+    return multiply(multiplier, number);
+  };
+}
+
+const multiplyBy2 = preMultiplyBy(2);
+console.log(multiplyBy2(5)); // 10
+```
+
+> - **이벤트 핸들러와 콜백 함수**: 클로저는 이벤트 핸들러나 콜백 함수에서 특정 변수의 상태를 유지하는 데 사용될 수 있음. 이는 동적인 웹 애플리케이션 개발에서 특정 동작에 대한 사용자의 입력이나 반응을 관리할 때 유용함.
+
+```javascript
+function setupCounter(label) {
+  let count = 0;
+  document.getElementById(label).addEventListener("click", function () {
+    count++;
+    console.log(`${label}: ${count}`);
+  });
+}
+
+setupCounter("button1");
+```
+
+### asynchronous
+
+- **비동기 처리**: JavaScript는 싱글 스레드 언어이기 때문에, 비동기 처리를 통해 I/O 작업이나 시간이 걸리는 작업을 처리함. 이를 통해 코드 실행을 블로킹하지 않고, 백그라운드에서 작업을 수행할 수 음. 이벤트 루프와 콜백 큐를 활용해 비동기 작업을 효율적으로 관리함.
+
+- **Promise**: Promise는 비동기 작업의 최종 성공 또는 실패를 나타내는 객체. then, catch, finally 메소드를 통해 비동기 작업의 결과를 처리. Promise는 Pending (대기), Fulfilled (이행), Rejected (거부)의 상태를 가짐. Promise를 사용하면 콜백 지옥을 피하고, 비동기 코드의 가독성을 높일 수 있음.
+
+- **async/await**: async/await는 Promise를 보다 쉽게 사용할 수 있게 해주는 ES2017(ES8)에서 도입된 문법. async 함수는 항상 Promise를 반환하며, await 키워드는 Promise의 결과가 반환될 때까지 함수의 실행을 일시 중지하고, 결과가 반환되면 실행을 재개함. async/await를 사용하면 비동기 코드를 동기 코드처럼 읽고 쓸 수 있어 가독성이 더욱 향상됨.
