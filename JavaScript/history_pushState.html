@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>History API Example</title>
+  </head>
+  <body>
+    <h1>History.pushState() Example</h1>
+
+    <button id="page1">Load Page 1</button>
+    <button id="page2">Load Page 2</button>
+
+    <div id="content">
+      <p>Click a button to change the URL without reloading the page.</p>
+    </div>
+
+    <script>
+      document.getElementById("page1").addEventListener("click", function () {
+        // 페이지 1의 URL로 변경
+        history.pushState({ page: 1 }, "Page 1", "?page=1");
+        document.getElementById("content").innerHTML =
+          "<p>You are now on Page 1.</p>";
+        console.log(history.state);
+      });
+
+      document.getElementById("page2").addEventListener("click", function () {
+        // 페이지 2의 URL로 변경
+        history.pushState({ page: 2 }, "Page 2", "?page=2");
+        document.getElementById("content").innerHTML =
+          "<p>You are now on Page 2.</p>";
+        console.log(history.state);
+      });
+
+      // popstate 이벤트는 사용자가 브라우저의 뒤로가기/앞으로가기 버튼을 클릭했을 때 발생
+      window.addEventListener("popstate", function (event) {
+        if (event.state) {
+          document.getElementById("content").innerHTML =
+            "<p>You are now on Page " + event.state.page + ".</p>";
+        } else {
+          document.getElementById("content").innerHTML =
+            "<p>Click a button to change the URL without reloading the page.</p>";
+        }
+        console.log(history.state);
+      });
+    </script>
+  </body>
+</html>

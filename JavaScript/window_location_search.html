@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLSearchParams Example</title>
+  </head>
+  <body>
+    <button id="changeUrl">Change URL and Read Parameters</button>
+    <script>
+      document.getElementById("changeUrl").addEventListener("click", () => {
+        // 새로운 쿼리 스트링 설정 (여기서는 페이지 리로드 없이 콘솔에서 확인만 합니다)
+        const newQueryString = "?search=JavaScript&page=2";
+
+        // history.pushState를 사용하여 URL 업데이트 (페이지 리로드 없음)
+        history.pushState({}, "", newQueryString);
+
+        // 업데이트된 URL에서 쿼리 스트링 읽기
+        const params = new URLSearchParams(window.location.search);
+
+        // 특정 파라미터 값 읽기
+        const searchValue = params.get("search");
+        const pageValue = params.get("page");
+
+        // 결과 출력
+        alert(`Search: ${searchValue}, Page: ${pageValue}`);
+      });
+    </script>
+  </body>
+</html>

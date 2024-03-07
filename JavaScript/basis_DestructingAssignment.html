@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Destructuring Assignment Example</title>
+  </head>
+  <body>
+    <h1>Object Destructuring</h1>
+    <div id="objectResult"></div>
+
+    <h1>Array Destructuring</h1>
+    <div id="arrayResult"></div>
+
+    <script>
+      // 객체 구조 분해
+      const person = {
+        name: "John Doe",
+        age: 30,
+        location: "New York",
+      };
+
+      const { name, age, location: personLocation } = person; // 구조 분해 할당을 사용하여 person 객체의 속성을 추출
+      document.getElementById(
+        "objectResult"
+      ).innerText = `Name: ${name}, Age: ${age}, Location: ${personLocation}`;
+
+      // 배열 구조 분해
+      const colors = ["Red", "Green", "Blue"];
+
+      const [firstColor, secondColor] = colors; // 구조 분해 할당을 사용하여 colors 배열의 요소를 추출
+      document.getElementById(
+        "arrayResult"
+      ).innerText = `First Color: ${firstColor}, Second Color: ${secondColor}`;
+    </script>
+  </body>
+</html>

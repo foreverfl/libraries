@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLSearchParams</title>
+  </head>
+  <body>
+    <script>
+      // 1. 쿼리 문자열 생성하기
+      // 쿼리 파라미터를 사용하여 URLSearchParams 객체 생성
+      const params1 = new URLSearchParams({
+        search: "JavaScript",
+        page: "1",
+      });
+
+      const queryString = params1.toString(); // URLSearchParams 객체를 문자열로 변환
+      console.log(queryString); // "search=JavaScript&page=1"
+
+      // 2. 쿼리 문자열에서 값 읽기
+      const params2 = new URLSearchParams("search=JavaScript&page=1"); // 쿼리 문자열이 있는 URLSearchParams 객체 생성
+
+      const searchValue = params2.get("search"); // 특정 파라미터 값 읽기
+      console.log(searchValue); // "JavaScript"
+
+      // 3. 쿼리 문자열 수정하기
+      // 쿼리 문자열이 있는 URLSearchParams 객체 생성
+      const params3 = new URLSearchParams("search=JavaScript&page=1");
+
+      params3.set("page", "2"); // 파라미터 값 수정
+      params3.append("sort", "relevance"); // 새 파라미터 추가
+      console.log(params3.toString()); // "search=JavaScript&page=2&sort=relevance"
+
+      // 4. 쿼리 문자열에서 값 삭제하기
+      // 쿼리 문자열이 있는 URLSearchParams 객체 생성
+      const params4 = new URLSearchParams(
+        "search=JavaScript&page=1&sort=relevance"
+      );
+
+      params4.delete("sort"); // 파라미터 삭제
+      console.log(params4.toString()); // "search=JavaScript&page=1"
+    </script>
+  </body>
+</html>
