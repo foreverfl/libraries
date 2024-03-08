@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* :hover */
+      .box-hover {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        transition: background-color 3s ease;
+      }
+
+      .box-hover:hover {
+        background-color: blue;
+      }
+
+      /* :focus */
+      .input-focus {
+        border: 2px solid gray;
+        padding: 10px;
+        transition: border-color 0.5s ease;
+      }
+
+      .input-focus:focus {
+        border-color: blue;
+      }
+
+      /* :active */
+      .button-active {
+        background-color: rgb(201, 57, 57);
+        color: white;
+        padding: 10px 20px;
+        transition: background-color 0.5s ease;
+      }
+
+      .button-active:active {
+        background-color: darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS</h1>
+    <h2>:hover</h2>
+    <div class="box-hover"></div>
+    <hr />
+
+    <h2>:focus</h2>
+    <input type="text" class="input-focus" />
+    <hr />
+
+    <h2>:active</h2>
+    <button class="button-active">Click Me</button>
+    <hr />
+
+    <h1>JavaScript</h1>
+    <h2>onmouseover</h2>
+    <div
+      onmouseover="onMouseOver(event)"
+      style="width: 100px; height: 100px; background-color: red"
+    ></div>
+
+    <script>
+      function onMouseOver(event) {
+        event.target.style.backgroundColor = "blue";
+        event.target.style.transition = "background-color 3s ease";
+      }
+    </script>
+  </body>
+</html>

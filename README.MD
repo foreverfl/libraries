@@ -8,7 +8,7 @@
 
 - Java
 
-  > - Default Library
+  > - Built-in Library
   > - GraphQL
   > - Kafka
   > - Redis
@@ -16,6 +16,7 @@
 
 - Python
 
+  > - Built-in Library
   > - Matplotlib
   > - Numpy
   > - Pandas
@@ -23,9 +24,21 @@
   > - Tensorflow
 
 - php
+
+  > - Built-in Library
+
 - Node.js
+
+  > - Built-in Library
+
 - JavaScript
+
+  > - Built-in Library
+
 - HTML/CSS
+  > - Built-in Library
+  > - Bootstrap
+  > - Tailwind CSS
 
 ## Git
 
@@ -537,3 +550,25 @@ setupCounter("button1");
 - **Promise**: Promise는 비동기 작업의 최종 성공 또는 실패를 나타내는 객체. then, catch, finally 메소드를 통해 비동기 작업의 결과를 처리. Promise는 Pending (대기), Fulfilled (이행), Rejected (거부)의 상태를 가짐. Promise를 사용하면 콜백 지옥을 피하고, 비동기 코드의 가독성을 높일 수 있음.
 
 - **async/await**: async/await는 Promise를 보다 쉽게 사용할 수 있게 해주는 ES2017(ES8)에서 도입된 문법. async 함수는 항상 Promise를 반환하며, await 키워드는 Promise의 결과가 반환될 때까지 함수의 실행을 일시 중지하고, 결과가 반환되면 실행을 재개함. async/await를 사용하면 비동기 코드를 동기 코드처럼 읽고 쓸 수 있어 가독성이 더욱 향상됨.
+
+## HTML/CSS - Built-in Library
+
+### CSS 가상 클래스
+
+- **:hover**
+
+  > - 사용자가 마우스 포인터를 요소 위에 올려놓았을 때 적용됨.
+  > - 링크, 버튼, 이미지 등에 마우스를 올려놓았을 때 스타일 변화를 주고 싶을 때 사용됨.
+  > - 예: 링크 색상 변경, 배경색 변경 등
+
+- **:active**
+
+  > - 요소가 활성화되어 있을 때, 즉 사용자가 요소를 클릭하고 있는 동안 적용됨.
+  > - 클릭이나 탭 등의 직접적인 상호작용을 하는 동안 요소에 적용되는 스타일을 정의함.
+  > - 주로 버튼이나 링크 클릭 시의 시각적 피드백을 제공하는 데 사용됨.
+  > - 예: 버튼을 누르는 동안 배경색이나 크기가 변경될 수 있음.
+
+- **:focus**
+  > - 요소가 포커스를 받았을 때 적용됨. 포커스는 키보드(예: 탭 키를 이용한 포커스 이동)나 프로그래매틱 방식(예: JavaScript를 통한 element.focus() 호출), 또는 사용자의 직접적인 상호작용(예: 마우스 클릭)으로 요소에 할당될 수 있음.
+  > - 주로 입력 필드, 선택 박스, 링크 등에 적용되며, 사용자가 현재 상호작용하고 있는 요소를 시각적으로 구분할 때 사용됨.
+  > - 예: 입력 필드가 포커스를 받았을 때 테두리 색상 변경 등
