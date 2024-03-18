@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>innerWidth vs clientWidth Visualization</title>
+    <style>
+      /* 스타일 설정 */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 200%; /* 스크롤바를 생성하기 위해 body의 높이를 200%로 설정 */
+      }
+      #innerWidthDiv {
+        position: fixed; /* 화면 전체에 걸쳐 표시 */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        background-color: rgba(255, 0, 0, 0.5); /* 빨간색 반투명 배경 */
+        height: 100%; /* 부모 요소의 높이만큼 */
+        color: white; /* 글자색 */
+        padding: 10px;
+      }
+      #clientWidthDiv {
+        position: fixed; /* 화면 전체에 걸쳐 표시 */
+        top: 50vh;
+        left: 0;
+        width: 100vw;
+        background-color: rgba(0, 0, 255, 0.5); /* 파란색 반투명 배경 */
+        height: 100%; /* 부모 요소의 높이만큼 */
+        color: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 스크롤을 포함 -->
+    <div id="innerWidthDiv">innerWidth 영역</div>
+    <!-- 스크롤을 제외 -->
+    <div id="clientWidthDiv">clientWidth 영역</div>
+
+    <script>
+      function updateInfo() {
+        const innerWidthValue = window.innerWidth;
+        const clientWidthValue = document.documentElement.clientWidth;
+        const scrollbarWidth =
+          window.innerWidth - document.documentElement.clientWidth;
+
+        // 기본 정보 설정
+        document.getElementById(
+          "innerWidthDiv"
+        ).innerHTML = `innerWidth: ${innerWidthValue}px`;
+        document.getElementById(
+          "clientWidthDiv"
+        ).innerHTML = `clientWidth: ${clientWidthValue}px`;
+
+        // 스크롤바 너비 정보 추가
+        document.getElementById(
+          "innerWidthDiv"
+        ).innerHTML += `<br>Scrollbar Width: ${scrollbarWidth}px`;
+        document.getElementById(
+          "clientWidthDiv"
+        ).innerHTML += `<br>Scrollbar Width: ${scrollbarWidth}px`;
+      }
+
+      window.onload = updateInfo;
+      window.onresize = updateInfo; // 창 크기 조절 시 정보 업데이트
+    </script>
+  </body>
+</html>

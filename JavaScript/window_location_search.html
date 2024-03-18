@@ -17,6 +17,12 @@
 
         // 업데이트된 URL에서 쿼리 스트링 읽기
         const params = new URLSearchParams(window.location.search);
+        console.log(params);
+
+        // 모든 키-값 쌍 출력
+        for (const [key, value] of params.entries()) {
+          console.log(`${key}: ${value}`);
+        }
 
         // 특정 파라미터 값 읽기
         const searchValue = params.get("search");

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browser Language Example</title>
+  </head>
+  <body>
+    <script>
+      // 사용자의 브라우저 언어 설정 확인
+      const browserLang = navigator.language || navigator.userLanguage;
+
+      // 브라우저 언어 설정을 웹 페이지에 표시
+      document.body.innerHTML = `<p>Your browser language is: ${browserLang}</p>`;
+
+      console.log(navigator);
+    </script>
+  </body>
+</html>
