@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Example with Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex bg-gray-200 p-4">
+      <div class="flex-1 bg-red-500 text-white p-2">flex-1</div>
+    </div>
+    <div class="flex bg-gray-200 p-4">
+      <div class="flex-auto bg-green-500 text-white p-2">flex-auto</div>
+    </div>
+    <div class="flex bg-gray-200 p-4">
+      <div class="flex-initial bg-blue-500 text-white p-2">flex-initial</div>
+    </div>
+    <div class="flex bg-gray-200 p-4">
+      <div class="flex-none bg-yellow-500 text-white p-2">flex-none</div>
+    </div>
+
+    <!-- flex-1 vs flex-auto -->
+    <div class="flex bg-gray-200 p-4 mb-4">
+      <div class="flex-1 bg-red-500 text-white p-2">
+        flex-1 (fills space equally)
+      </div>
+      <div class="flex-auto bg-blue-500 text-white p-2">
+        flex-auto (based on content size then fills space equally)
+      </div>
+      <div class="flex-auto bg-green-500 text-white p-2">
+        A lot more content in this flex-auto div to see how it grows.
+      </div>
+    </div>
+
+    <!-- flex-initial vs flex-none -->
+    <div class="flex bg-gray-200 p-4">
+      <div class="flex-initial bg-red-500 text-white p-2">
+        flex-initial (size based on content but can shrink if needed)
+      </div>
+      <div class="flex-initial bg-blue-500 text-white p-2">
+        Shorter content.
+      </div>
+      <div class="flex-none bg-green-500 text-white p-2">
+        flex-none (strictly based on content, no shrink, no grow)
+      </div>
+    </div>
+  </body>
+</html>
