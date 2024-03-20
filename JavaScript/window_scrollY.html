@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Position Example</title>
+    <style>
+      body {
+        height: 2000px; /* 스크롤을 만들기 위해 body의 높이를 크게 설정 */
+      }
+      #scrollPosition {
+        position: fixed; /* 스크롤 위치를 항상 화면에 표시 */
+        top: 20px;
+        left: 20px;
+        background-color: white;
+        padding: 10px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scrollPosition">Scroll Y: 0px</div>
+
+    <script>
+      const scrollIndicator = document.getElementById("scrollPosition");
+
+      window.addEventListener("scroll", () => {
+        scrollIndicator.textContent = `Scroll Y: ${window.scrollY}px`;
+      });
+    </script>
+  </body>
+</html>

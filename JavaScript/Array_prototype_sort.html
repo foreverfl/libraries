@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array Sort Example</title>
+  </head>
+  <body>
+    <button onclick="sortArray('asc')">오름차순 정렬</button>
+    <button onclick="sortArray('desc')">내림차순 정렬</button>
+    <div id="arrayOutput">[5, 3, 8, 1, 2, 9, 4, 7, 6]</div>
+
+    <script>
+      function sortArray(order) {
+        let numbers = [5, 3, 8, 1, 2, 9, 4, 7, 6];
+
+        if (order === "asc") {
+          // 오름차순 정렬
+          numbers.sort(function (a, b) {
+            return a - b;
+          });
+        } else if (order === "desc") {
+          // 내림차순 정렬
+          numbers.sort(function (a, b) {
+            return b - a;
+          });
+        }
+
+        document.getElementById("arrayOutput").innerText =
+          JSON.stringify(numbers);
+      }
+    </script>
+  </body>
+</html>

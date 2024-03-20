@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expression Examples</title>
+  </head>
+  <body>
+    <h2>정규표현식 검증 예제</h2>
+
+    <p>
+      <label>숫자만 입력: </label>
+      <input type="text" id="numbersOnly" placeholder="숫자만 입력하세요" />
+    </p>
+    <p>
+      <label>이메일 주소: </label>
+      <input type="text" id="email" placeholder="이메일 주소 입력" />
+    </p>
+    <p>
+      <label>웹사이트 URL: </label>
+      <input type="text" id="url" placeholder="URL 입력" />
+    </p>
+    <p>
+      <label>HTML 태그 제거: </label>
+      <input type="text" id="noHtml" placeholder="HTML 태그 포함 텍스트 입력" />
+    </p>
+
+    <button onclick="validateInput()">검증</button>
+    <p id="result"></p>
+
+    <script>
+      function validateInput() {
+        const numbersOnly = document.getElementById("numbersOnly").value;
+        const email = document.getElementById("email").value;
+        const url = document.getElementById("url").value;
+        const noHtml = document.getElementById("noHtml").value;
+
+        const resultElement = document.getElementById("result");
+        let result = "";
+
+        // 숫자만 포함
+        if (/^\d+$/.test(numbersOnly)) {
+          result += "숫자만 포함: 유효함<br>";
+        } else {
+          result += "숫자만 포함: 유효하지 않음<br>";
+        }
+
+        // 이메일 형식 검증
+        // \w+: 문자열(알바벳 대소문자, 숫자, 밑줄을 포함) 하나 이상
+        // [\.-]?: '.' 또는 '-'가 있을 수도 있고 없을 수도 있음
+        // *: 앞의 패턴이 0번 이상 반복됨
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+          result += "이메일 형식: 유효함<br>";
+        } else {
+          result += "이메일 형식: 유효하지 않음<br>";
+        }
+
+        // URL 검증
+        // ?: 0 또는 1개
+        if (
+          /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(
+            url
+          )
+        ) {
+          result += "URL 형식: 유효함<br>";
+        } else {
+          result += "URL 형식: 유효하지 않음<br>";
+        }
+
+        // HTML 태그 제거
+        const cleanedText = noHtml.replace(/\<\/?[^>]+\>/g, "");
+        result += `HTML 태그 제거된 텍스트: ${cleanedText}<br>`;
+
+        resultElement.innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

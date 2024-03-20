@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Locale and Format Example</title>
+  </head>
+  <body>
+    <h2>현재 날짜를 다양한 지역과 포맷으로 표시</h2>
+
+    <label for="localeSelector">지역 선택:</label>
+    <select id="localeSelector">
+      <option value="en-US">미국 (en-US)</option>
+      <option value="ko-KR">한국 (ko-KR)</option>
+      <option value="ja-JP">일본 (ja-JP)</option>
+      <option value="de-DE">독일 (de-DE)</option>
+    </select>
+
+    <label for="formatSelector">포맷 선택:</label>
+    <select id="formatSelector">
+      <option value="full">전체 (년, 월, 일, 요일)</option>
+      <option value="short">짧은 (년, 월, 일)</option>
+      <option value="yearMonth">년-월</option>
+      <option value="monthDay">월-일</option>
+    </select>
+
+    <button onclick="showDate()">날짜 표시</button>
+    <p id="dateDisplay"></p>
+
+    <script>
+      function showDate() {
+        const locale = document.getElementById("localeSelector").value;
+        const format = document.getElementById("formatSelector").value;
+        const now = new Date();
+        let options;
+
+        switch (format) {
+          case "full":
+            options = {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+              weekday: "long",
+            };
+            break;
+          case "short":
+            options = { year: "numeric", month: "numeric", day: "numeric" };
+            break;
+          case "yearMonth":
+            options = { year: "numeric", month: "long" };
+            break;
+          case "monthDay":
+            options = { month: "long", day: "numeric" };
+            break;
+          default:
+            options = {};
+            break;
+        }
+
+        const formattedDate = now.toLocaleDateString(locale, options);
+        document.getElementById(
+          "dateDisplay"
+        ).innerText = `현재 날짜 (${locale}, ${format}): ${formattedDate}`;
+      }
+    </script>
+  </body>
+</html>
