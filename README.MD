@@ -400,6 +400,15 @@ org.gradle.console=verbose
 3. **Gradle 속성**: 일반적으로 프로젝트 디렉토리 또는 GRADLE_USER_HOME에 있는 gradle.properties 파일에 저장됨.
 4. **환경 변수**: Gradle을 실행하는 환경에서 제공.
 
+## Node.js
+
+### package.json
+
+- **package.json**: Node.js 프로젝트에 대한 메타데이터를 정의. 이 파일은 프로젝트의 이름, 버전, 의존성, 스크립트 등 다양한 정보를 포함할 수 있음. type 필드는 모듈 시스템을 지정하는 데 사용되며, Node.js에서 ES 모듈 또는 CommonJS 모듈을 사용할지 결정하는 데 중요한 역할을 함.
+- **type**
+  > - "type": "module": 이 설정은 프로젝트에서 JavaScript 모듈을 ES 모듈 시스템으로 사용하겠다는 것을 의미함. 따라서, .js 파일에서 import와 export 문을 사용할 수 있음.
+  > - "type": "commonjs": 기본값으로, Node.js의 전통적인 모듈 시스템. require()와 module.exports를 사용하여 모듈을 불러오고 내보낼 수 있음.
+
 ## JavaScript
 
 ### JavaScript의 특징

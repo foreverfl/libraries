@@ -1,0 +1,8 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "nodejs library example",
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}
