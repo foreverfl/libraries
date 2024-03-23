@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h3>Click anywhere in the document to get the clientX value</h3>
+    <p id="clientX">Click somewhere</p>
+
+    <script>
+      document.addEventListener("click", function (event) {
+        var x = event.clientX;
+        document.getElementById("clientX").textContent = "clientX value: " + x;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body style="width: 2000px">
+    <h3>Click anywhere in the document to get the pageX value</h3>
+    <p id="pageX">Click somewhere</p>
+
+    <script>
+      document.addEventListener("click", function (event) {
+        var x = event.pageX;
+        document.getElementById("pageX").textContent = "pageX value: " + x;
+      });
+    </script>
+  </body>
+</html>

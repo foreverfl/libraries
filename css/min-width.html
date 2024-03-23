@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>min-width Example</title>
+    <style>
+      .box {
+        background-color: lightblue;
+        min-width: max-content; /* 초기 값 */
+        padding: 10px;
+        margin: 20px;
+        transition: all 0.5s ease; /* 부드러운 전환 효과 */
+      }
+      .container {
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="changeMinWidth('max-content')">max-content</button>
+    <button onclick="changeMinWidth('min-content')">min-content</button>
+    <button onclick="changeMinWidth('120%')">120%</button>
+
+    <div class="container">
+      <div class="box">
+        이 텍스트는 `.box`의 너비를 변경하여 보여주는 예제입니다. 여러분은 이
+        문장을 길게 만들어 다양한 `min-width` 값들의 효과를 더 쉽게 관찰할 수
+        있습니다. 이 텍스트는 충분히 길어서 `max-content`, `min-content`,
+        `fit-content` 등의 속성 값이 적용될 때 그 차이를 볼 수 있게 해줍니다.
+      </div>
+    </div>
+
+    <script>
+      function changeMinWidth(value) {
+        document.querySelector(".box").style.minWidth = value;
+      }
+    </script>
+  </body>
+</html>

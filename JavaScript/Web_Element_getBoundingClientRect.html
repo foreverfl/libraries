@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>getBoundingClientRect Example</title>
+    <style>
+      .button {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button">Click Me!</button>
+
+    <script>
+      document
+        .querySelector(".button")
+        .addEventListener("click", function (event) {
+          var rect = event.currentTarget.getBoundingClientRect(); // 이벤트가 발생한 현재 타겟(여기서는 버튼)의 위치와 크기 정보
+
+          console.log("left: " + rect.left);
+          console.log("top: " + rect.top);
+          console.log("right: " + rect.right);
+          console.log("bottom: " + rect.bottom);
+          console.log("x: " + rect.x);
+          console.log("y: " + rect.y);
+          console.log("width: " + rect.width);
+          console.log("height: " + rect.height);
+          console.log("==============================");
+        });
+    </script>
+  </body>
+</html>

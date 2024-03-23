@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drag and Drop Example</title>
+    <style>
+      #drop_zone {
+        width: 300px;
+        height: 100px;
+        padding: 20px;
+        border: 3px dashed #ccc;
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="drop_zone">여기에 파일을 드롭하세요</div>
+    <ul id="file_list"></ul>
+
+    <script>
+      var dropZone = document.getElementById("drop_zone");
+
+      // 드롭 영역에 드래그 이벤트 리스너 추가
+      dropZone.addEventListener("dragover", function (e) {
+        e.preventDefault(); // 기본 이벤트를 막아줍니다.
+        e.dataTransfer.dropEffect = "copy"; // 드래그하는 아이템을 복사하는 것으로 표시
+      });
+
+      // 파일들이 드롭되었을 때의 이벤트 처리
+      dropZone.addEventListener("drop", function (e) {
+        e.preventDefault(); // 기본 이벤트를 막아줍니다.
+
+        var files = e.dataTransfer.files; // 드롭한 파일 목록을 가져옵니다.
+        var fileList = document.getElementById("file_list");
+
+        // 파일 목록을 순회하며 화면에 표시
+        for (var i = 0; i < files.length; i++) {
+          var li = document.createElement("li");
+          li.textContent =
+            files[i].name +
+            " (" +
+            files[i].type +
+            ", " +
+            files[i].size +
+            " bytes)";
+          fileList.appendChild(li);
+        }
+      });
+    </script>
+  </body>
+</html>

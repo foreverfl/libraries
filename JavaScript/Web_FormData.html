@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form id="myForm">
+      <input type="text" name="username" value="User1" />
+      <input type="text" name="age" value="30" />
+      <input type="submit" />
+    </form>
+
+    <script>
+      document.getElementById("myForm").onsubmit = function (event) {
+        event.preventDefault();
+
+        var formData = new FormData(event.target); // FormData 객체를 생성
+        formData.append("city", "Seoul"); // 'city'라는 새로운 필드를 FormData에 추가
+
+        // FormData 객체의 모든 키-값 쌍을 반복하며 출력
+        for (var pair of formData.entries()) {
+          console.log(pair[0] + ", " + pair[1]);
+        }
+        console.log(formData.get("username")); // FormData의 'username' 값을 가져와 콘솔에 출력
+
+        // 실제로는 여기서 FormData를 사용하여 데이터를 서버로 전송
+      };
+    </script>
+  </body>
+</html>
