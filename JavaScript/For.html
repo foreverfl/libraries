@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>For Loop Examples</title>
+  </head>
+  <body>
+    <h1>For Loop Examples</h1>
+    <h2>Traditional For Loop</h2>
+    <div id="traditional"></div>
+    <h2>For...of Loop</h2>
+    <div id="forOf"></div>
+    <h2>For...in Loop</h2>
+    <div id="forIn"></div>
+    <h2>For Await...of Loop</h2>
+    <div id="forAwaitOf"></div>
+
+    <script>
+      const array = ["apple", "banana", "cherry"];
+
+      // Traditional For Loop
+      let text = "";
+      for (let i = 0; i < array.length; i++) {
+        text += array[i] + " ";
+      }
+      document.getElementById("traditional").textContent = text;
+
+      // For...of Loop: 배열의 각 요소에 직접 접근
+      text = "";
+      for (const item of array) {
+        text += item + " ";
+      }
+      document.getElementById("forOf").textContent = text;
+
+      // For...in Loop: 객체의 속성을 반복
+      text = "";
+      for (const index in array) {
+        text += array[index] + " ";
+      }
+      document.getElementById("forIn").textContent = text;
+
+      // For Await...of Loop (this part uses async function and is illustrative)
+      text = "";
+      async function asyncIterableExample() {
+        const asyncIterable = {
+          [Symbol.asyncIterator]() {
+            let i = 0;
+            return {
+              next() {
+                if (i < array.length) {
+                  return Promise.resolve({ value: array[i++], done: false });
+                } else {
+                  return Promise.resolve({ done: true });
+                }
+              },
+            };
+          },
+        };
+
+        for await (const item of asyncIterable) {
+          text += item + " ";
+        }
+        document.getElementById("forAwaitOf").textContent = text;
+      }
+      asyncIterableExample();
+    </script>
+  </body>
+</html>

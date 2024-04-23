@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Symbol Example</title>
+  </head>
+  <body>
+    <h1>Symbol in JavaScript</h1>
+    <div id="output"></div>
+
+    <script>
+      // Symbol을 생성
+      const UNIQUE_KEY = Symbol("UniqueKey");
+
+      // 객체를 생성하고 Symbol을 키로 사용하여 속성을 추가
+      const myObject = {
+        [UNIQUE_KEY]: "This is a secret message",
+      };
+
+      // 객체에서 Symbol 키로 속성을 읽어옴
+      const secretMessage = myObject[UNIQUE_KEY];
+
+      // HTML에 결과를 출력
+      document.getElementById("output").textContent = secretMessage;
+    </script>
+  </body>
+</html>

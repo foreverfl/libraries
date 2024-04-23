@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Object.entries() Example</title>
+  </head>
+  <body>
+    <h1>Object Details</h1>
+    <ul id="objectList"></ul>
+
+    <script>
+      const person = {
+        name: "John Doe",
+        age: 30,
+        occupation: "Web Developer",
+      };
+
+      const entries = Object.entries(person);
+      const list = document.getElementById("objectList");
+
+      entries.forEach(([key, value]) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${key}: ${value}`;
+        list.appendChild(listItem);
+      });
+    </script>
+  </body>
+</html>

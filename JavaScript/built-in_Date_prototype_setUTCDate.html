@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>setUTCDate Example</title>
+  </head>
+  <body>
+    <h1>setUTCDate Example</h1>
+    <button onclick="setUTCDate()">Set UTC Date</button>
+    <p id="dateOutput"></p>
+
+    <script>
+      function setUTCDate() {
+        const now = new Date();
+        now.setUTCDate(1); // UTC 기준으로 현재 월의 첫 번째 날로 설정
+        document.getElementById("dateOutput").innerText =
+          "UTC Date is set to: " + now.toUTCString();
+      }
+    </script>
+  </body>
+</html>

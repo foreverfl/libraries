@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RegExp exec Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .output {
+        margin-top: 10px;
+        background-color: #f8f8f8;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RegExp.prototype.exec() Examples</h1>
+    <button onclick="simpleExample()">Simple Match</button>
+    <button onclick="globalExample()">Global Match</button>
+    <button onclick="captureGroupExample()">Capture Group</button>
+    <div class="output" id="output"></div>
+
+    <script>
+      function simpleExample() {
+        const content = "Hello World!";
+        const pattern = /Hello/;
+        const result = pattern.exec(content);
+        displayResult(result);
+      }
+
+      function globalExample() {
+        const content = "Cats are fun, I love cats!";
+        const pattern = /cats/gi; // 'g' for global search, 'i' for case-insensitive
+        let result;
+        let matches = [];
+        while ((result = pattern.exec(content)) !== null) {
+          matches.push(result[0] + " found at position " + result.index);
+        }
+        displayResult(matches.join("<br>"));
+      }
+
+      function captureGroupExample() {
+        const content = "He was born in 1988 and she was born in 1991.";
+        const pattern = /(\d{4})/g; // Captures four digits
+        let result;
+        let matches = [];
+        while ((result = pattern.exec(content)) !== null) {
+          matches.push(
+            "Year: " + result[1] + " found at position " + result.index
+          );
+        }
+        displayResult(matches.join("<br>"));
+      }
+
+      function displayResult(message) {
+        document.getElementById("output").innerHTML = message;
+      }
+    </script>
+  </body>
+</html>

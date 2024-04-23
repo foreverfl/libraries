@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Splice Example</title>
+  </head>
+  <body>
+    <h1>Array.prototype.splice() Examples</h1>
+    <div id="output"></div>
+
+    <script>
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+      // 요소 제거
+      const removed = fruits.splice(1, 2); // 인덱스 1에서 시작하여 2개의 요소를 제거
+      document.getElementById(
+        "output"
+      ).innerHTML += `<p>제거 후 남은 요소: ${fruits}</p>`;
+      document.getElementById(
+        "output"
+      ).innerHTML += `<p>제거된 요소: ${removed}</p>`;
+
+      // 요소 추가
+      fruits.splice(2, 0, "Lemon", "Kiwi"); // 인덱스 2에 요소 추가, 제거는 없음
+      document.getElementById(
+        "output"
+      ).innerHTML += `<p>요소 추가 후: ${fruits}</p>`;
+
+      // 요소 교체
+      fruits.splice(0, 1, "Grape"); // 인덱스 0의 요소를 'Grape'로 교체
+      document.getElementById(
+        "output"
+      ).innerHTML += `<p>요소 교체 후: ${fruits}</p>`;
+
+      // 요소를 제거 없이 중간에 삽입
+      fruits.splice(2, 0, "Peach"); // 인덱스 2에 'Peach' 추가, 제거는 없음
+      document.getElementById(
+        "output"
+      ).innerHTML += `<p>중간 삽입 후: ${fruits}</p>`;
+    </script>
+  </body>
+</html>

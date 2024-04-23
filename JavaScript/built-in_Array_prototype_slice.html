@@ -6,10 +6,26 @@
   <body>
     <script>
       const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-      const citrus = fruits.slice(1, 3);
 
-      console.log(`추출된 요소: ${citrus}`);
-      // 결과: 추출된 요소: Orange,Lemon
+      // 기본 예제
+      const citrus = fruits.slice(1, 3);
+      console.log(`추출된 요소: ${citrus}`); // 결과: 추출된 요소: Orange, Lemon
+
+      // 음수 인덱스 사용: 배열의 끝에서 요소 추출
+      const lastTwo = fruits.slice(-2);
+      console.log(`마지막 두 요소: ${lastTwo}`); // 결과: 마지막 두 요소: Apple, Mango
+
+      // 하나의 음수 인덱스: 마지막 요소 제외
+      const allButLast = fruits.slice(0, -1);
+      console.log(`마지막을 제외한 모든 요소: ${allButLast}`); // 결과: 마지막을 제외한 모든 요소: Banana, Orange, Lemon, Apple
+
+      // 전체 배열 복사
+      const fruitsCopy = fruits.slice();
+      console.log(`배열의 복사본: ${fruitsCopy}`); // 결과: 배열의 복사본: Banana, Orange, Lemon, Apple, Mango
+
+      // 부분적으로 하나의 요소 추출
+      const thirdFruit = fruits.slice(2, 3);
+      console.log(`세 번째 요소: ${thirdFruit}`); // 결과: 세 번째 요소: Lemon
     </script>
   </body>
 </html>
