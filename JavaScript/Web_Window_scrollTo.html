@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScrollTo Behavior Example</title>
+    <style>
+      #container {
+        height: 1500px;
+        background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
+      }
+      .button {
+        margin: 20px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <button class="button" onclick="scrollSmooth()">Scroll Smooth</button>
+      <button class="button" onclick="scrollInstant()">Scroll Instant</button>
+      <button class="button" onclick="scrollAuto()">Scroll Auto</button>
+      <div
+        id="target"
+        style="margin-top: 1200px; height: 300px; background: #ff6f69"
+      >
+        Scroll Target
+      </div>
+    </div>
+
+    <script>
+      function scrollSmooth() {
+        window.scrollTo({
+          top: document.getElementById("target").offsetTop,
+          behavior: "smooth",
+        });
+      }
+
+      function scrollInstant() {
+        window.scrollTo({
+          top: document.getElementById("target").offsetTop,
+          behavior: "instant",
+        });
+      }
+
+      function scrollAuto() {
+        window.scrollTo({
+          top: document.getElementById("target").offsetTop,
+          behavior: "auto",
+        });
+      }
+    </script>
+  </body>
+</html>
